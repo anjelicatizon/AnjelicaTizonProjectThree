@@ -1,0 +1,45 @@
+html {
+    font-size: 62.5%;
+    font-family: $body-font;
+}
+
+a {
+    text-decoration: none;
+    color: $main-color;
+        &:hover,
+        &:focus {
+            color: $secondary-color;
+        }
+        &:active {
+            color: $secondary-color;
+        }
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-family: $header-font;
+    font-size: 6rem;
+    font-weight: 700;
+    color: $main-color;
+    line-height: 37px;
+}
+
+.wrapper {
+    max-width: 1250px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: black;
+    color: $secondary-color;
+    padding: 10px;
+    text-align: center;
+}

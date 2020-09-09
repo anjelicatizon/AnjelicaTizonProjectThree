@@ -1,0 +1,30 @@
+// Importing partials
+@import "variables";
+@import "setup";
+@import "global-styles";
+
+/*********************/
+/*        NAV        */
+/*********************/
+
+nav {
+    background-color: $main-color;
+    height: 10vh;
+
+    .navContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            max-height: 6rem;
+            padding: 5px 0;
+        }
+
+        h1 {
+            color: $secondary-color;
+            padding: 20px 0;
+        }
+    }
+
+}
