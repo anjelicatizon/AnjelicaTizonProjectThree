@@ -8,7 +8,7 @@ const jbtQuestions = {
         "Do you pour the milk or cereal in first?",
         "Does pineapple belong on pizza?",
         "What’s the most bizarre thing that you’ve ever eaten?",
-        "If you could build an ultimate meal, what would the components be? (ex. Fries from Five Guys, your family's homemade burgers, ice cream from Bang Bang",
+        "If you could build an ultimate meal, what would the components be? (ex. Fries from Five Guys, your family's homemade burgers, ice cream from Bang Bang)",
         "Would you rather never eat your favorite food for the rest of your life, or only be able to eat your favorite food?"
     ],
     personalPreferences: [
@@ -32,8 +32,10 @@ $(document).ready(function(){ //Doc Ready
     // Function that will return a random item from one of the cateogyr arrays
     function randomQuestion(category) {
         const randomIndex = Math.floor(Math.random() * category.length);
-        console.log(randomIndex);
-        return category[randomIndex];
+        // console.log(randomIndex);
+        const questionToDisplay = category[randomIndex] // When you return, it's printing it on the page
+        // console.log(questionToDisplay)
+        return questionToDisplay;
     }
 
     // Create an event listener for a 'submit' event
@@ -42,15 +44,30 @@ $(document).ready(function(){ //Doc Ready
         // console.log('hello');
         // Variable that stores the category the user selected:
         const userSelection = $('select option:selected').val();
-        console.log(userSelection)
+        // console.log(userSelection)
 
         // category will return us the array that corresponds with the category 
         const categorySelected = jbtQuestions[userSelection]
         console.log(categorySelected)
 
-        randomQuestion(categorySelected);
+        const finalQuestion = randomQuestion(categorySelected);
         // console.log(categorySelected[9])
+
+        // DISPLAY IT
+        $('.displayedQuestion').text(`${finalQuestion}`);
     })
+
+    // SCROLL TO IT
+    $('form').on('submit', function(e) {
+        e.preventDefault();
+        // console.log('SCROLL');
+        
+        // Animation courtesty of CodexWorld
+        const target = $('.resultsContainer');
+        $('html,body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
+     });
 
 
 });
