@@ -21,19 +21,40 @@
 
     <main>
         <div class="wrapper">
+
+            <!-- LANDING -->
             <section class="landing">
 
                 <!-- INTRO -->
                 <h2>What is Juice Box Tox?</h2>
 
-                <p>Juice Box Tox helps you create a base for conversations. In a not lame way.</p>
+                <p>Juice Box Tox helps you create a base for conversations. <span>In a not lame way.</span></p>
 
                 <!-- DROPDOWN -->
-                <section class="categorySelector">
-
-                </section>
-            </section>
+                <div class="categorySelector">
+                    <form action="#">
+                        <fieldset>
+                            <label for="jbtCategory"><p>Select a category below and we'll give you a question that will <em>really</em> start a converation</p></label>
+                            <select name="jbtCategory">
+                                <option disabled selected>Select a Category</option>
+                                <option value="foodRelated">Food Related</option>
+                                <option value="personalPreferences">Personal Preferences/Experiences</option>
+                                <input type="submit" value="GO">
+                            </select>
+                        </fieldset>
+                    </form>
+                </div>
         </div>
+
+        <!-- RESULTS -->
+        <section class="results">
+            <div class="wrapper">
+                <div class="resultsContainer">
+                    <h2><!--Populate with JS --></h2>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <footer>

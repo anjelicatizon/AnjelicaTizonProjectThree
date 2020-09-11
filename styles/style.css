@@ -245,17 +245,23 @@ html {
   font-family: "Domine", "serif";
 }
 
+.wrapper {
+  max-width: 1250px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
-  color: #0a0909;
+  color: #fefafa;
 }
 
 a:hover, a:focus {
-  color: #fefafa;
+  color: #00A64D;
 }
 
 a:active {
-  color: #fefafa;
+  color: #00A64D;
 }
 
 ul {
@@ -264,20 +270,68 @@ ul {
 
 img {
   max-width: 100%;
+  padding: 5px 0;
 }
 
-h1 {
+h1, h2 {
   font-family: "Montserrat", "sans-serif";
   font-size: 6rem;
   font-weight: 700;
   color: #0a0909;
   line-height: 37px;
+  margin: 20px 0;
 }
 
-.wrapper {
-  max-width: 1250px;
-  width: 90%;
-  margin: 0 auto;
+h2 {
+  font-size: 5rem;
+}
+
+p {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+fieldset {
+  margin: 20px 0;
+  padding: 20px 0;
+  border: none;
+}
+
+input {
+  min-width: 200px;
+  margin: 20px 0;
+  background-color: #00A64D;
+  padding: 20px;
+  border: 2px solid #0a0909;
+  border-radius: 15px;
+}
+
+input:hover, input:focus {
+  background-color: #0a0909;
+  color: #fefafa;
+}
+
+/* Down arrow courtesy of The Filament Group */
+select {
+  width: 50%;
+  max-width: 50%;
+  font-family: "Montserrat", "sans-serif";
+  font-size: 2rem;
+  padding: 2rem;
+  border: 2px solid #0a0909;
+  border-radius: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%25007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-position: right .7em top 50%, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+select:hover, select:focus {
+  border: 3px solid #00A64D;
 }
 
 footer {
@@ -309,10 +363,64 @@ nav .navContainer {
 
 nav .navContainer img {
   max-height: 6rem;
-  padding: 5px 0;
 }
 
 nav .navContainer h1 {
   color: #fefafa;
-  padding: 20px 0;
+}
+
+/*********************/
+/*    MAIN/LANDING   */
+/*********************/
+.landing {
+  height: 90vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.landing fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing span {
+  color: #00A64D;
+}
+
+.results {
+  background-color: #0a0909;
+}
+
+.results .resultsContainer {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.results .resultsContainer h2 {
+  color: #fefafa;
 }

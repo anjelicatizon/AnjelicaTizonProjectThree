@@ -18,13 +18,53 @@ nav {
 
         img {
             max-height: 6rem;
-            padding: 5px 0;
         }
 
         h1 {
             color: $secondary-color;
-            padding: 20px 0;
         }
     }
 
+}
+
+/*********************/
+/*    MAIN/LANDING   */
+/*********************/
+
+// Intro/About Section
+
+.landing {
+    height: 90vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    span {
+        color: $tertiary-color;
+    }
+}
+
+// Results Section
+.results {
+    background-color: $main-color;
+
+    .resultsContainer {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            color: $secondary-color;
+        }
+    }
+
+    
 }
