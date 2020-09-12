@@ -38,7 +38,7 @@ $(document).ready(function(){ //Doc Ready
         return questionToDisplay;
     }
 
-    // Create an event listener for a 'submit' event
+    // FIRST EVENT LISTENER TO GENERATE ORIGINAL Q FROM LANDING PAGE
     $('form').on('submit', function(e) {
         e.preventDefault();
         // console.log('hello');
@@ -57,17 +57,33 @@ $(document).ready(function(){ //Doc Ready
         $('.displayedQuestion').text(`${finalQuestion}`);
     })
 
-    // SCROLL TO IT
+    // SECOND EVENT LISTENER - SCROLL TO IT
     $('form').on('submit', function(e) {
         e.preventDefault();
         // console.log('SCROLL');
         
-        // Animation courtesty of CodexWorld
         const target = $('.resultsContainer');
+        // Animation courtesy of CodexWorld
         $('html,body').animate({
             scrollTop: target.offset().top
         }, 1000);
      });
 
+    // THIRD EVENT LISTENER FOR PICK ANOTHER QUESTION BUTTON
+     $('.newQ').on('click', function() {
+        // console.log('New Question')
 
+        // $('.displayedQuestion').text(`${finalQuestion}`);
+    })
+
+    // FOURTH EVENT LISTENER FOR PICK ANOTHER CATEGORY/START OVER & GO TO TOP
+    $('.newCat').on('click', function(){
+        console.log('New cat')
+
+        const target = $('.landing');
+        // Animation courtesy of CodexWorld
+        $('html,body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    })
 });

@@ -298,18 +298,22 @@ fieldset {
   border: none;
 }
 
-input {
+input,
+button {
   min-width: 200px;
-  margin: 20px 0;
+  margin: 20px;
   background-color: #00A64D;
   padding: 20px;
   border: 2px solid #0a0909;
   border-radius: 15px;
 }
 
-input:hover, input:focus {
+input:hover, input:focus,
+button:hover,
+button:focus {
   background-color: #0a0909;
   color: #fefafa;
+  border: 2px solid #00A64D;
 }
 
 /* Down arrow courtesy of The Filament Group */
@@ -347,10 +351,11 @@ footer {
 /*********************/
 nav {
   background-color: #0a0909;
-  height: 10vh;
 }
 
 nav .navContainer {
+  height: 10vh;
+  padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,10 +415,14 @@ nav .navContainer h1 {
 }
 
 .results .resultsContainer {
-  height: 80vh;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -424,4 +433,25 @@ nav .navContainer h1 {
 
 .results .resultsContainer h2 {
   color: #fefafa;
+}
+
+.results .resultsContainer .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*********************/
+/*       FOOTER      */
+/*********************/
+footer {
+  height: 10vh;
+}
+
+footer .footerText {
+  margin: 10px 0;
+}
+
+footer p {
+  margin: 0;
 }

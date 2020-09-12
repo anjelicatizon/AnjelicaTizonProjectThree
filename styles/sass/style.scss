@@ -9,9 +9,10 @@
 
 nav {
     background-color: $main-color;
-    height: 10vh;
 
     .navContainer {
+        height: 10vh;
+        padding: 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -56,15 +57,33 @@ nav {
     background-color: $main-color;
 
     .resultsContainer {
-        height: 80vh;
+        height: 90vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
         h2 {
             color: $secondary-color;
         }
+
+        .buttonContainer {
+            display: flex;
+        }
+    } 
+}
+
+/*********************/
+/*       FOOTER      */
+/*********************/
+
+footer {
+    height: 10vh;
+    .footerText {
+        margin: 10px 0;
     }
 
-    
+    p {
+        margin: 0;
+    }
 }
