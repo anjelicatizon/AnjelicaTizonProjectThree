@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juice Box Tox 🧃</title>
+    <link type="image/png" href="./assets/jbt-white-logotype.png" rel="icon">
     <script src="https://kit.fontawesome.com/58ab0192c3.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
@@ -37,7 +38,7 @@
                         <fieldset>
                             <label for="jbtCategory"><p>Select a category below and we'll give you a question that will <em>really</em> start a converation</p></label>
                             <select name="jbtCategory">
-                                <option disabled selected>Select a Category</option>
+                                <option disabled selected class="default">Select a Category</option>
                                 <option value="foodRelated">Food Related</option>
                                 <option value="personalPreferences">Personal Preferences/Experiences</option>
                                 <input type="submit" value="GO">
@@ -51,15 +52,15 @@
         <section class="results">
             <div class="wrapper">
                 <div class="resultsContainer">
-                    <h2 class="displayedQuestion allowCopy"><!--Populate with JS --></h2>
+                    <h2 class="displayedQuestion"><!--Populate with JS --></h2>
                     
-                    <i class="fas fa-copy"></i>
-
                     <div class="buttonContainer">
-                        <!-- HOW DO THESE HIDE ON LOAD? Look at Zodiac Project -->
                         <button type="submit" class="newQ">Pick another Question</button>
 
-                        <button type="submit" class="newCat">Pick another Category</button>
+                        <button type="submit" class
+                        ="newCat">Pick another Category</button>
+
+                        <i class="fas fa-copy"></i>
                     </div>
                 </div>
 

@@ -43,8 +43,6 @@ $(document).ready(function(){ //Doc Ready
         e.preventDefault();
         // console.log('hello');
 
-        // TO DO - ERORR HANDLING: If no selection, prompt user to select a Q
-
         // Variable that stores the category the user selected:
         const userSelection = $('select option:selected').val();
         // console.log(userSelection)
@@ -52,6 +50,11 @@ $(document).ready(function(){ //Doc Ready
         // category will return us the array that corresponds with the category 
         const categorySelected = jbtQuestions[userSelection]
         console.log(categorySelected)
+
+        // DONE - ERORR HANDLING: If no selection, prompt user to select a Q
+        if (categorySelected == undefined) {
+            alert('Select a category from the dropdown to generate a question 🧃')
+        }
 
         const finalQuestion = randomQuestion(categorySelected);
         // console.log(categorySelected[9])
@@ -104,7 +107,12 @@ $(document).ready(function(){ //Doc Ready
     })
 
    // FIFTH EVENT LISTENER TO COPY TEXT
-  
+   $('.fa-copy').on('click', function(){
+       console.log('COPY')
+        
+   })
+
+   
 
  
 });
