@@ -75,6 +75,12 @@ button {
     }
 }
 
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Down arrow courtesy of The Filament Group */
 select {
     width: 50%;

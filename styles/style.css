@@ -319,6 +319,18 @@ button:focus {
   border: 2px solid #00A64D;
 }
 
+button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /* Down arrow courtesy of The Filament Group */
 select {
   width: 50%;
@@ -445,6 +457,10 @@ nav .navContainer h1 {
   display: flex;
 }
 
+.results .resultsContainer i {
+  padding: 0 5px;
+}
+
 /*********************/
 /*       FOOTER      */
 /*********************/
@@ -480,6 +496,17 @@ footer p {
   p {
     font-size: 1.5rem;
   }
+  .buttonContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 20px;
+  }
+  .buttonContainer .newQ,
+  .buttonContainer .newCat {
+    margin: 10px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -496,16 +523,5 @@ footer p {
   }
   p {
     font-size: 1rem;
-  }
-  .buttonContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-top: 20px;
-  }
-  .buttonContainer .newQ,
-  .buttonContainer .newCat {
-    margin: 10px;
   }
 }

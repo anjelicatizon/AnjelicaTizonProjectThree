@@ -38,6 +38,15 @@ $(document).ready(function(){ //Doc Ready
         return questionToDisplay;
     }
 
+    //Copy function courtesty of Shaik Maqsood on CodePen
+    function copyToClipboard(element) {
+        const temp = $("<input>");
+        $("body").append(temp);
+        temp.val($(element).text()).select();
+        document.execCommand("copy");
+        temp.remove();
+    }
+
     // DONE - FIRST EVENT LISTENER TO GENERATE ORIGINAL Q FROM LANDING PAGE
     $('form').on('submit', function(e) {
         e.preventDefault();
@@ -100,19 +109,16 @@ $(document).ready(function(){ //Doc Ready
         console.log('New cat')
 
         const target = $('.landing');
-        // Animation courtesy of CodexWorld
+        // Scroll/Animation courtesy of CodexWorld
         $('html,body').animate({
             scrollTop: target.offset().top
         }, 1000);
     })
 
    // FIFTH EVENT LISTENER TO COPY TEXT
-   $('.fa-copy').on('click', function(){
-       console.log('COPY')
-        
+   $('.copy').on('click', function() {
+       console.log('COPY');
+       copyToClipboard('.displayedQuestion')
    })
-
-   
-
  
 });
