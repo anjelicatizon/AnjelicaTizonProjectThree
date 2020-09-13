@@ -287,6 +287,11 @@ h2 {
   line-height: 6rem;
 }
 
+i {
+  color: #fefafa;
+  font-size: 2rem;
+}
+
 p {
   font-size: 2rem;
   margin: 20px 0;
@@ -412,6 +417,7 @@ nav .navContainer h1 {
 
 .results {
   background-color: #0a0909;
+  display: none;
 }
 
 .results .resultsContainer {

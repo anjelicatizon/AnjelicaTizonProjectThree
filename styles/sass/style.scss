@@ -55,6 +55,7 @@ nav {
 // Results Section
 .results {
     background-color: $main-color;
+    display: none;
 
     .resultsContainer {
         height: 90vh;

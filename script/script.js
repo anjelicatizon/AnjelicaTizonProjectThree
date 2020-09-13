@@ -38,10 +38,13 @@ $(document).ready(function(){ //Doc Ready
         return questionToDisplay;
     }
 
-    // FIRST EVENT LISTENER TO GENERATE ORIGINAL Q FROM LANDING PAGE
+    // DONE - FIRST EVENT LISTENER TO GENERATE ORIGINAL Q FROM LANDING PAGE
     $('form').on('submit', function(e) {
         e.preventDefault();
         // console.log('hello');
+
+        // TO DO - ERORR HANDLING: If no selection, prompt user to select a Q
+
         // Variable that stores the category the user selected:
         const userSelection = $('select option:selected').val();
         // console.log(userSelection)
@@ -53,11 +56,14 @@ $(document).ready(function(){ //Doc Ready
         const finalQuestion = randomQuestion(categorySelected);
         // console.log(categorySelected[9])
 
-        // DISPLAY IT
+        // DISPLAY QUESTION
         $('.displayedQuestion').text(`${finalQuestion}`);
+
+        //DISPLAY BUTTONS - results ssection fades in on click
+        $('.results').fadeIn('slow');
     })
 
-    // SECOND EVENT LISTENER - SCROLL TO IT
+    // DONE - SECOND EVENT LISTENER - SCROLL TO IT
     $('form').on('submit', function(e) {
         e.preventDefault();
         // console.log('SCROLL');
@@ -69,14 +75,24 @@ $(document).ready(function(){ //Doc Ready
         }, 1000);
      });
 
-    // THIRD EVENT LISTENER FOR PICK ANOTHER QUESTION BUTTON
+    // DONE - THIRD EVENT LISTENER FOR PICK ANOTHER QUESTION BUTTON
      $('.newQ').on('click', function() {
-        // console.log('New Question')
+        console.log('New Question')
 
-        // $('.displayedQuestion').text(`${finalQuestion}`);
+        // Checking user selection again
+        const userSelectionTwo = $('select option:selected').val();
+        // console.log(userSelection)
+
+        // category will return us the array that corresponds with the category 
+        const categorySelectedTwo = jbtQuestions[userSelectionTwo]
+        console.log(categorySelectedTwo)
+
+        const anotherQuestion = randomQuestion(categorySelectedTwo);
+
+        $('.displayedQuestion').text(`${anotherQuestion}`);
     })
 
-    // FOURTH EVENT LISTENER FOR PICK ANOTHER CATEGORY/START OVER & GO TO TOP
+    // DONE - FOURTH EVENT LISTENER FOR PICK ANOTHER CATEGORY/START OVER & GO TO TOP
     $('.newCat').on('click', function(){
         console.log('New cat')
 
@@ -86,4 +102,9 @@ $(document).ready(function(){ //Doc Ready
             scrollTop: target.offset().top
         }, 1000);
     })
+
+   // FIFTH EVENT LISTENER TO COPY TEXT
+  
+
+ 
 });
