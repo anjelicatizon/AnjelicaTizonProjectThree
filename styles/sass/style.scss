@@ -1,7 +1,6 @@
-// Importing partials
 @import "variables";
 @import "setup";
-@import "global-styles";
+@import "globalStyles";
 
 /*********************/
 /*        NAV        */
@@ -93,4 +92,4 @@ footer {
     }
 }
 
-@import "media-queries"
+@import "mediaQueries"

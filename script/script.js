@@ -25,16 +25,11 @@ const jbtQuestions = {
     ]
 };
 
-// console.log(jbtQuestions)
+$(document).ready(function(){
 
-$(document).ready(function(){ //Doc Ready
-
-    // Function that will return a random item from one of the cateogyr arrays
     function randomQuestion(category) {
         const randomIndex = Math.floor(Math.random() * category.length);
-        // console.log(randomIndex);
-        const questionToDisplay = category[randomIndex] // When you return, it's printing it on the page
-        // console.log(questionToDisplay)
+        const questionToDisplay = category[randomIndex]
         return questionToDisplay;
     }
 
@@ -47,75 +42,50 @@ $(document).ready(function(){ //Doc Ready
         temp.remove();
     }
 
-    // DONE - FIRST EVENT LISTENER TO GENERATE ORIGINAL Q FROM LANDING PAGE
     $('form').on('submit', function(e) {
         e.preventDefault();
-        // console.log('hello');
-
-        // Variable that stores the category the user selected:
         const userSelection = $('select option:selected').val();
-        // console.log(userSelection)
-
-        // category will return us the array that corresponds with the category 
         const categorySelected = jbtQuestions[userSelection]
         console.log(categorySelected)
 
-        // DONE - ERORR HANDLING: If no selection, prompt user to select a Q
         if (categorySelected == undefined) {
             alert('Select a category from the dropdown to generate a question 🧃')
         }
 
         const finalQuestion = randomQuestion(categorySelected);
-        // console.log(categorySelected[9])
 
-        // DISPLAY QUESTION
         $('.displayedQuestion').text(`${finalQuestion}`);
 
-        //DISPLAY BUTTONS - results ssection fades in on click
         $('.results').fadeIn('slow');
     })
 
-    // DONE - SECOND EVENT LISTENER - SCROLL TO IT
     $('form').on('submit', function(e) {
         e.preventDefault();
-        // console.log('SCROLL');
-        
-        const target = $('.resultsContainer');
         // Animation courtesy of CodexWorld
+        const target = $('.resultsContainer');
         $('html,body').animate({
             scrollTop: target.offset().top
         }, 1000);
      });
 
-    // DONE - THIRD EVENT LISTENER FOR PICK ANOTHER QUESTION BUTTON
      $('.newQ').on('click', function() {
-        console.log('New Question')
-
-        // Checking user selection again
         const userSelectionTwo = $('select option:selected').val();
-        // console.log(userSelection)
-
-        // category will return us the array that corresponds with the category 
         const categorySelectedTwo = jbtQuestions[userSelectionTwo]
         console.log(categorySelectedTwo)
-
         const anotherQuestion = randomQuestion(categorySelectedTwo);
 
         $('.displayedQuestion').text(`${anotherQuestion}`);
     })
 
-    // DONE - FOURTH EVENT LISTENER FOR PICK ANOTHER CATEGORY/START OVER & GO TO TOP
     $('.newCat').on('click', function(){
-        console.log('New cat')
-
         const target = $('.landing');
+
         // Scroll/Animation courtesy of CodexWorld
         $('html,body').animate({
             scrollTop: target.offset().top
         }, 1000);
     })
 
-   // FIFTH EVENT LISTENER TO COPY TEXT
    $('.copy').on('click', function() {
        console.log('COPY');
        copyToClipboard('.displayedQuestion')
